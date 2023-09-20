@@ -1,6 +1,32 @@
 {
-    "preset": "plonky2",
-    "build_command": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
-    "prove_command": "./build/circuit prove --input-json input.json",
-    "input_type": "json"
+	"entrypoints": [
+		{
+			"name": "full-ethereum",
+			"baseDir": ".",
+			"buildCommand": [
+				"cargo run --release --bin full-ethereum",
+				"mv ./release/full-ethereum ./build/full-ethereum"
+			],
+			"proveCommand": [
+				"./build/mapreduce prove input.json"
+			]
+		},
+		{
+			"name": "sync-committee",
+			"baseDir": ".",
+			"buildCommand": [
+				"cargo run --release --bin sync-committee",
+				"mv ./release/sync-committee ./build/sync-committee"
+			],
+			"proveCommand": [
+				"./build/mapreduce prove input.json"
+			]
+		},
+		{
+			"name": "example",
+			"baseDir": ".",
+			"build_command": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
+			"prove_command": "./build/circuit prove --input-json input.json"
+		}
+	]
 }
