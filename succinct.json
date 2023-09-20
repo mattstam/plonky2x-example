@@ -2,6 +2,7 @@
 	"entrypoints": [
 		{
 			"name": "full-ethereum",
+			"framework": "plonky2",
 			"baseDir": ".",
 			"buildCommand": [
 				"cargo run --release --bin full-ethereum",
@@ -13,6 +14,7 @@
 		},
 		{
 			"name": "sync-committee",
+			"framework": "plonky2",
 			"baseDir": ".",
 			"buildCommand": [
 				"cargo run --release --bin sync-committee",
@@ -24,6 +26,7 @@
 		},
 		{
 			"name": "example",
+			"framework": "plonky2",
 			"baseDir": ".",
 			"build_command": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
 			"prove_command": "./build/circuit prove --input-json input.json"
