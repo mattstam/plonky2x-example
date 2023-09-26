@@ -3,23 +3,23 @@
         {
             "name": "full-ethereum",
             "framework": "plonky2",
-            "base_dir": ".",
-            "build_command": "cargo run --release --bin full-ethereum && mv ./release/full-ethereum ./build/full-ethereum",
-            "prove_command": "./build/mapreduce prove input.json"
+            "baseDir": ".",
+            "buildCommand": "cargo run --release --bin full-ethereum && mv ./release/full-ethereum ./build/full-ethereum",
+            "proveCommand": "./build/mapreduce prove input.json"
         },
         {
             "name": "sync-committee",
             "framework": "plonky2",
-            "base_dir": ".",
-            "build_command": "cargo run --release --bin sync-committee && mv ./release/sync-committee ./build/sync-committee",
-            "prove_command": "./build/mapreduce prove input.json"
+            "baseDir": ".",
+            "buildCommand": "cargo run --release --bin sync-committee && mv ./release/sync-committee ./build/sync-committee",
+            "proveCommand": "./build/mapreduce prove input.json"
         },
         {
             "name": "example",
             "framework": "plonky2",
-            "base_dir": ".",
-            "build_command": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
-            "prove_command": "./build/circuit prove --input-json input.json"
+            "baseDir": ".",
+            "buildCommand": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
+            "proveCommand": "./build/circuit prove --input-json input.json"
         }
     ]
 }
