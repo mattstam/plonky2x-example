@@ -15,7 +15,7 @@
             "proveCommand": "./build/mapreduce prove input.json"
         },
         {
-            "name": "full-ethereum",
+            "name": "example",
             "framework": "plonky2",
             "baseDir": ".",
             "buildCommand": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
