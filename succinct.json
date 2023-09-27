@@ -1,21 +1,21 @@
 {
     "entrypoints": [
         {
-            "name": "full-ethereum",
+            "name": "test",
             "framework": "plonky2",
             "baseDir": ".",
             "buildCommand": "cargo run --release --bin full-ethereum && mv ./release/full-ethereum ./build/full-ethereum",
             "proveCommand": "./build/mapreduce prove input.json"
         },
         {
-            "name": "sync-committee",
+            "name": "post",
             "framework": "plonky2",
             "baseDir": ".",
             "buildCommand": "cargo run --release --bin sync-committee && mv ./release/sync-committee ./build/sync-committee",
             "proveCommand": "./build/mapreduce prove input.json"
         },
         {
-            "name": "example",
+            "name": "pls-ignore",
             "framework": "plonky2",
             "baseDir": ".",
             "buildCommand": "rustup override set nightly && mkdir build && cargo run --release build && mv ./target/release/circuit ./build/circuit",
